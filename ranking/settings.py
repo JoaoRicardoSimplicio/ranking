@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # apps
     'nfl.apps.NflConfig',
+
+    #packages
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
