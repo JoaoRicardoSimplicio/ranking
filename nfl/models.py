@@ -7,12 +7,16 @@ class nflTeams(models.Model):
 	instagram_link = models.URLField(max_length=200, null=True)
 	nfl_profile_link = models.URLField(max_length=200, null=True)
 	
+	class Meta:
+		ordering = ['-instagram__followers']
+
 	def __str__(self):
 		return self.name
 
 
+
 class nflInstagrams(models.Model):
-	team = models.ForeignKey(nflTeams, on_delete=models.CASCADE)
+	team = models.ForeignKey(nflTeams, on_delete=models.CASCADE, related_name='instagram')
 	followers = models.IntegerField(null=True)
 	followings = models.IntegerField(null=True)
 	username = models.CharField(max_length=50, unique=True)
@@ -23,4 +27,4 @@ class nflInstagrams(models.Model):
 		ordering = ['-followers']
 
 	def __str__(self):
-		self.username
+		return self.username
