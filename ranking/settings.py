@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # apps
+    'overall.apps.OverallConfig',
     'nfl.apps.NflConfig',
+    'premier_league.apps.PremierLeagueConfig',
 
     #packages
     'rest_framework',
