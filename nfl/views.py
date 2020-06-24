@@ -1,14 +1,12 @@
 from django.shortcuts import render
 from rest_framework import generics
 
-
-from .models import nflTeams, nflInstagrams
+from overall.models import Team
 from nfl.serializers import NflTeamsSerializer, NflInstagramSerializer
 
 
-
 class AllNflTeams(generics.ListAPIView):
-	queryset = nflTeams.objects.all()
+	queryset = Team.objects.filter(sport='american footbal')
 	serializer_class = NflTeamsSerializer
 
 

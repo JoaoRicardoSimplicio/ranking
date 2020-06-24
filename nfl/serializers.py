@@ -1,15 +1,15 @@
 from rest_framework import serializers
-from nfl.models import nflTeams, nflInstagrams
+from overall.models import Team, Instagram
 
 
 class NflInstagramSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = nflInstagrams
+		model = Instagram
 		fields = ('username', 'followers', 'followings', 'profile_picture')
 
 
 class NflTeamsSerializer(serializers.ModelSerializer):
 	instagram = NflInstagramSerializer(many=True, read_only=True)
 	class Meta:
-		model = nflTeams
-		fields = ('name', 'nfl_profile_link', 'instagram')
+		model = Team
+		fields = ('name', 'site_profile_link', 'instagram_link', 'instagram')
