@@ -6,7 +6,7 @@ from nfl.serializers import NflTeamsSerializer, NflInstagramSerializer
 
 
 class AllNflTeams(generics.ListAPIView):
-	queryset = Team.objects.filter(sport='american footbal')
+	queryset = Team.objects.filter(sport='american football')
 	serializer_class = NflTeamsSerializer
 
 
