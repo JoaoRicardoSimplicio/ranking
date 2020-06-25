@@ -5,7 +5,7 @@ Ranking
 This project aims to list the teams with the most famous instagram accounts.
 
 ```
-in http://127.0.0.1:8000/ you can see ranking top ten team most.
+in http://127.0.0.1:8000/ you can see ranking top ten team.
 in http://127.0.0.1:8000/nfl/teams/ you can see ranking of nfl teams.
 in http://127.0.0.1:8000/football/premier_league/teams/ you can see ranking of premier league teams.
 in http://127.0.0.1:8000/football/la_liga/teams/ you can see ranking of la liga teams.
