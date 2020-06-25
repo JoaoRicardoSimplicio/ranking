@@ -15,7 +15,7 @@ class Command(BaseCommand):
     """
 
     def handle(self, *args, **kwargs):
-        self.teamsList = Team.objects.filter(sport='american footbal')
+        self.teamsList = Team.objects.filter(sport='american football')
         self.teamsInstagramList = get_instagram_information(self.teamsList)
         save_instagram_information(self.teamsInstagramList)
 
