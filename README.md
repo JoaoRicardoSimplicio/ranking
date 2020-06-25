@@ -20,7 +20,7 @@ Setup the database:
     (env) $ python manage.py migrate
 ```
 
-Last, but not least, run the server:
+Run the server:
 
 ```bash
     (env) $ python manage.py runserver
