@@ -5,6 +5,7 @@ class Team(models.Model):
 	instagram_link = models.URLField(max_length=200, null=False)
 	site_profile_link = models.URLField(max_length=200, null=True)
 	sport = models.CharField(max_length=50, null=False)
+	country = models.CharField(max_length=100, null=True)
 	
 	class Meta:
 		ordering = ['-instagram__followers']
