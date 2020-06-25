@@ -1,8 +1,11 @@
 Ranking
 ===========
 
-## Installation
+## About
+This project aims to list the teams with the most famous instagram accounts.
 
+
+## Installation
 
 
 You can create a virtual environment and install the required packages with the following commands:
