@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # apps
     'overall.apps.OverallConfig',
     'nfl.apps.NflConfig',
-    'premier_league.apps.PremierLeagueConfig',
+    'football.apps.FootballConfig',
 
     #packages
     'rest_framework',
