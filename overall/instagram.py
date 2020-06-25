@@ -14,7 +14,6 @@ def get_url_instagram(teamName):
 	for account in result['users']:
 		if account['user']['is_verified'] is True and account['user']['is_private'] is False:
 			username = account['user']['username']
-			print(username)
 			break
 	instagramUrlTeam = 'https://www.instagram.com/{}/'.format(username)
 	return instagramUrlTeam
