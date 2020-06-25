@@ -8,11 +8,13 @@ from .models import Instagram
 
 
 def get_url_instagram(teamName):
-	response = requests.get('https://www.instagram.com/web/search/topsearch/?context=blended&query={}' .format(teamName))
+	response = requests.get(
+	    'https://www.instagram.com/web/search/topsearch/?context=blended&query={}' .format(teamName))
 	result = json.loads(response.content)
 	for account in result['users']:
 		if account['user']['is_verified'] is True and account['user']['is_private'] is False:
 			username = account['user']['username']
+			print(username)
 			break
 	instagramUrlTeam = 'https://www.instagram.com/{}/'.format(username)
 	return instagramUrlTeam
@@ -64,5 +66,8 @@ def save_instagram_information(teamsInstagramList):
                 previousTeamInstance = Instagram.objects.get(team=team.get('team'))
                 previousTeamInstance.followers = team.get('followers')
                 previousTeamInstance.followings = team.get('followings')
+                previousTeamInstance.username = team.get('username')
                 previousTeamInstance.profile_picture = team.get('profile_picture')
                 previousTeamInstance.save()
+
+

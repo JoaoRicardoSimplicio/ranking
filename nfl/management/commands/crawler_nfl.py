@@ -19,7 +19,7 @@ class Command(BaseCommand):
 		parser.add_argument(
 				'--refresh',
 		    	default=False,
-		    	help='refresh all teams in database'
+		    	help='refresh all teams from nfl in database'
 		)
 
 
@@ -44,9 +44,10 @@ class Command(BaseCommand):
 		for dataTeams in tqdm(result):
 			team = {
 				'name': dataTeams.p.text,
-				'nfl_profile_link': urlNflSite + dataTeams.find("a", class_ ="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary").get('href'),
+				'site_profile_link': urlNflSite + dataTeams.find("a", class_ ="d3-o-media-object__link d3-o-button nfl-o-cta nfl-o-cta--primary").get('href'),
 				'instagram_link': get_url_instagram(dataTeams.p.text),
-				'sport' : 'american footbal'
+				'sport' : 'american football',
+				'country': 'united states'
 			}
 			teamsList.append(team)
 		return teamsList
