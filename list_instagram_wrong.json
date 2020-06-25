@@ -1,0 +1,14 @@
+{ "teamsList": {
+
+		"Chelsea": {
+			"instagram_link": "https://www.instagram.com/chelseafc/"
+		},
+		"Burnley": {
+			"instagram_link": "https://www.instagram.com/burnleyofficial/"
+		},
+		"Spurs": {
+			"instagram_link": "https://www.instagram.com/spursofficial/"
+		}
+
+	}
+}
