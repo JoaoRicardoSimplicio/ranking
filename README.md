@@ -2,8 +2,9 @@ Ranking
 ===========
 
 ## About
-    This project aims to list the teams with the most famous instagram accounts.
- ```
+   
+This project aims to list the teams with the most famous instagram accounts.
+ 
  
 ## Installation
 
