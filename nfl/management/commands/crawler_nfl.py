@@ -49,7 +49,8 @@ class Command(BaseCommand):
 				'sport' : 'american football',
 				'country': 'united states'
 			}
-			teamsList.append(team)
+			if team['instagram_link'] is not None:
+				teamsList.append(team)
 		return teamsList
 
 

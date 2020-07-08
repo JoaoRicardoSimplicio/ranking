@@ -51,17 +51,17 @@ class Command(BaseCommand):
         response = requests.get(urlLaLigaTeams)
         result = BeautifulSoup(response.content, 'html.parser').select('.styled__ItemContainer-sc-1el5vkx-2')
         for dataTeams in tqdm(result):
-            try:
-                team = {
-                    'name': dataTeams.h2.text,
-                    'site_profile_link': f'{urlLaLigaSite}{dataTeams.get("href")}',
-                    'instagram_link': get_url_instagram(dataTeams.h2.text),
-                    'sport': 'football',
-                    'country': 'spain'
-                }
-                if team['name'] in listWrongInstagrams['teamsList']:
-                    team['instagram_link'] = listWrongInstagrams['teamsList'][team['name']]['instagram_link']
+            if dataTeams.h2.text not in listWrongInstagrams['teamsList']:
+                instagramLink = get_url_instagram(dataTeams.h2.text.lower())
+            elif dataTeams.h2.text in listWrongInstagrams['teamsList']:
+                instagramLink = listWrongInstagrams['teamsList'][dataTeams.h2.text]['instagram_link']
+            team = {
+                'name': dataTeams.h2.text,
+                'site_profile_link': f'{urlLaLigaSite}{dataTeams.get("href")}',
+                'instagram_link': instagramLink,
+                'sport': 'football',
+                'country': 'spain'
+            }
+            if team['instagram_link'] is not None:
                 teamsList.append(team)
-            except Exception:
-                print(Exception)
         return teamsList

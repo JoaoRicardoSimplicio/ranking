@@ -8,16 +8,18 @@ from .models import Instagram
 
 
 def get_url_instagram(teamName):
-	response = requests.get(
+    response = requests.get(
 	    'https://www.instagram.com/web/search/topsearch/?context=blended&query={}' .format(teamName))
-	result = json.loads(response.content)
-	for account in result['users']:
-		if account['user']['is_verified'] is True and account['user']['is_private'] is False:
-			username = account['user']['username']
-			print(username)
-			break
-	instagramUrlTeam = 'https://www.instagram.com/{}/'.format(username)
-	return instagramUrlTeam
+    result = json.loads(response.content)
+    try:
+        for account in result['users']:
+            if account['user']['is_verified'] is True and account['user']['is_private'] is False:
+                username = account['user']['username']
+                break
+        instagramUrlTeam = 'https://www.instagram.com/{}/'.format(username)
+        return instagramUrlTeam
+    except Exception:
+        return None
 
 
 def transform_information_from_instagram(team, profileInformation):

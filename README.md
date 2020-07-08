@@ -1,38 +1,21 @@
-Ranking
-===========
+# ranking_frontend
 
-## About
-This project aims to list the teams with the most famous instagram accounts.
+> A Vue.js project
 
+## Build Setup
 
-## Installation
+``` bash
+# install dependencies
+npm install
 
+# serve with hot reload at localhost:8080
+npm run dev
 
-You can create a virtual environment and install the required packages with the following commands:
+# build for production with minification
+npm run build
 
-```bash
-    $ virtualenv env                        # Create a virtual environment called env
-    $ source env/bin/activate               # Activate the environment
-    (env) $ pip install -r requirements.txt # Install the required packages
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-Setup the database:
-
-```bash
-    (env) $ python manage.py makemigrations
-    (env) $ python manage.py migrate
-```
-
-Run the server:
-
-```bash
-    (env) $ python manage.py runserver
-```
-
-```bash
-    (env) bash crawlers.bash
-```
-
-The server will be available at `http://127.0.0.1:8000`
-
-
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

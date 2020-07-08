@@ -8,7 +8,15 @@
 		},
 		"Spurs": {
 			"instagram_link": "https://www.instagram.com/spursofficial/"
+		},
+		"napoli": {
+			"instagram_link": "https://www.instagram.com/officialsscnapoli/"
+		},
+		"milan": {
+			"instagram_link": "https://www.instagram.com/acmilan/"
+		},
+		"Real Madrid": {
+			"instagram_link": "https://www.instagram.com/realmadrid/"
 		}
-
 	}
 }

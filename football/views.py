@@ -18,3 +18,8 @@ class LaLigaTeams(generics.ListAPIView):
 class TenMostFamousTeams(generics.ListAPIView):
 	queryset = Team.objects.filter(sport='football')[:10]
 	serializer_class = TeamsSerializer
+
+
+class SerieaTimTeams(generics.ListAPIView):
+	queryset = Team.objects.filter(sport='football', country='italy')
+	serializer_class = TeamsSerializer

@@ -51,14 +51,17 @@ class Command(BaseCommand):
         response = requests.get(urlPremierLeagueTeams)
         result = BeautifulSoup(response.content, 'html.parser').find('ul', class_ ='clubList').find_all('li')
         for dataTeams in tqdm(result):
+            if dataTeams.span.text not in listWrongInstagrams['teamsList']:
+                instagramLink = get_url_instagram(dataTeams.span.text)
+            elif dataTeams.span.text in listWrongInstagrams['teamsList']:
+                instagramLink = listWrongInstagrams['teamsList'][dataTeams.span.text]['instagram_link']
             team = {
                 'name': dataTeams.span.text,
                 'site_profile_link': (dataTeams.a.get('href')).replace(" ", ''),
-                'instagram_link': get_url_instagram(dataTeams.span.text),
+                'instagram_link': instagramLink,
                 'sport': 'football',
                 'country': 'england'
             }
-            if team['name'] in listWrongInstagrams['teamsList']:
-                team['instagram_link'] = listWrongInstagrams['teamsList'][team['name']]['instagram_link']
-            teamsList.append(team)
+            if team['instagram_link'] is not None:
+                teamsList.append(team)
         return teamsList
