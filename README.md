@@ -1,5 +1,19 @@
-Rankinkg
-=======
+Ranking
+===========
+
+## About
+    This project aims to list the teams with the most famous instagram accounts.
+ ```
+ 
+## Installation
+
+You can create a virtual environment and install the required packages with the following commands:
+
+```bash
+    $ virtualenv env                        # Create a virtual environment called env
+    $ source env/bin/activate               # Activate the environment
+    (env) $ pip install -r requirements.txt # Install the required packages
+```
 
 ```
 in http://127.0.0.1:8000/ you can see ranking top ten team.
